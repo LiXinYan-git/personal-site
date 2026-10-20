@@ -1,0 +1,74 @@
+{
+  "name": "李欣言",
+  "title": "软件工程 · 本科生",
+  "tagline": "热爱产品与工程，喜欢把想法做成可用的东西。",
+  "bio": "我是一名软件工程专业本科生，关注移动端开发、数据设计与产品体验。参与过图书商城、健康测评等项目的需求分析、系统设计与开发，习惯从业务问题出发，把复杂需求拆解成可落地的功能。",
+  "avatar": "assets/avatar.svg",
+  "location": "大连 · 中国",
+  "email": "lixinyan@example.com",
+  "skills": [
+    "Java",
+    "Android",
+    "SQLite",
+    "JavaScript",
+    "HTML / CSS",
+    "产品设计",
+    "数据分析",
+    "Git"
+  ],
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/lixinyan-git"
+    },
+    {
+      "label": "邮箱",
+      "url": "mailto:lixinyan@example.com"
+    }
+  ],
+  "projects": [
+    {
+      "name": "墨禾书城 App",
+      "desc": "多端图书商城：买家 / 商家 / 管理员三端，本地 SQLite 共享数据。",
+      "tags": [
+        "Android",
+        "SQLite",
+        "Java"
+      ],
+      "link": ""
+    },
+    {
+      "name": "图提取 ImageGrab",
+      "desc": "Chrome 扩展：一键提取电商详情页图片，批量转 PNG 下载。",
+      "tags": [
+        "Chrome 扩展",
+        "JavaScript"
+      ],
+      "link": ""
+    },
+    {
+      "name": "个人网站",
+      "desc": "静态个人主页 + GitHub 驱动的后台编辑，部署在 Vercel / Cloudflare Pages。",
+      "tags": [
+        "HTML/CSS",
+        "Serverless"
+      ],
+      "link": ""
+    }
+  ],
+  "experience": [
+    {
+      "period": "2023 — 至今",
+      "org": "大连海事大学",
+      "role": "软件工程 本科",
+      "desc": "主修软件工程，参与信息系统分析与设计、移动应用开发等课程实践。"
+    },
+    {
+      "period": "2026.09 — 2026.10",
+      "org": "课程项目 · 编译通过就收工",
+      "role": "买家端 / 共享模块 / 测试",
+      "desc": "负责买家端与共享数据库模块的设计实现，承担测试与文档整理。"
+    }
+  ],
+  "updatedAt": "2026-10-20"
+}

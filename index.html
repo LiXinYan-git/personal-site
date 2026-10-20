@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>李欣言 · 个人主页</title>
+<meta name="description" content="李欣言 — 软件工程本科生。关于我、技能、项目、经历与联系方式。">
+<meta name="theme-color" content="#5b5bd6">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#top"><span class="brand-mark"></span><span id="brandName">李欣言</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#about">关于</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="#experience">经历</a>
+      <a href="#contact">联系</a>
+      <a href="admin/" class="admin-link">后台</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">🌙</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero container">
+    <div class="hero-text">
+      <p class="eyebrow">你好，我是</p>
+      <h1 id="name">李欣言</h1>
+      <p class="role" id="title">软件工程 · 本科生</p>
+      <p class="tagline" id="tagline">热爱产品与工程，喜欢把想法做成可用的东西。</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">查看项目</a>
+        <a class="btn ghost" href="#contact">联系我</a>
+      </div>
+      <div class="socials" id="socials"></div>
+    </div>
+    <div class="hero-avatar">
+      <div class="avatar-ring">
+        <img id="avatar" src="assets/avatar.svg" alt="头像">
+      </div>
+      <div class="glow" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="section container" id="about">
+    <div class="section-head">
+      <span class="section-no">01</span>
+      <h2>关于我</h2>
+    </div>
+    <div class="about-grid">
+      <p class="bio" id="bio"></p>
+      <ul class="facts">
+        <li><span class="fact-k">所在地</span><span id="location">—</span></li>
+        <li><span class="fact-k">邮箱</span><a id="email" href="#">—</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-no">02</span>
+        <h2>技能</h2>
+      </div>
+      <div class="chips" id="skillsList"></div>
+    </div>
+  </section>
+
+  <!-- 项目 -->
+  <section class="section container" id="projects">
+    <div class="section-head">
+      <span class="section-no">03</span>
+      <h2>项目</h2>
+    </div>
+    <div class="cards" id="projectsList"></div>
+  </section>
+
+  <!-- 经历 -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-no">04</span>
+        <h2>经历</h2>
+      </div>
+      <div class="timeline" id="experienceList"></div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section container" id="contact">
+    <div class="contact-card">
+      <h2>保持联系</h2>
+      <p>欢迎交流项目、技术或任何有趣的想法。</p>
+      <div class="contact-actions">
+        <a class="btn primary" id="mailBtn" href="#">发邮件</a>
+        <button class="btn ghost" id="copyBtn" type="button">复制邮箱</button>
+      </div>
+      <div class="socials" id="contactSocials"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> <span id="footerName">李欣言</span> · 保留所有权利</p>
+    <p><a href="admin/">内容管理</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>内容管理 · 个人网站</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="back" href="../">← 返回主页</a>
+    <h1>内容管理</h1>
+    <span id="statusPill" class="pill">未连接</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 1. 连接 -->
+  <section class="card" id="connectCard">
+    <h2>1. 连接 GitHub 仓库</h2>
+    <p class="hint">
+      后台通过 GitHub Contents API 把资料写回仓库里的 <code>data/profile.json</code>。
+      提交后 Vercel / Cloudflare Pages 会自动重新部署（约 30～60 秒）。
+    </p>
+    <div class="grid-3">
+      <label>GitHub Token
+        <input id="token" type="password" autocomplete="off" placeholder="github_pat_... 或 ghp_...">
+      </label>
+      <label>仓库
+        <input id="repo" type="text" placeholder="用户名/仓库名，如 lixinyan-git/personal-site">
+      </label>
+      <label>分支
+        <input id="branch" type="text" value="main">
+      </label>
+    </div>
+    <p class="hint small">
+      建议使用 <strong>Fine-grained token</strong>，只授权这个仓库的
+      <code>Contents: Read and write</code> 权限。Token 只保存在本机浏览器，不会上传到别处。
+    </p>
+    <div class="actions">
+      <button id="connectBtn" class="btn primary" type="button">连接并加载</button>
+      <button id="clearTokenBtn" class="btn ghost" type="button">清除本机 Token</button>
+    </div>
+  </section>
+
+  <!-- 2. 编辑 -->
+  <section class="card hidden" id="editorCard">
+    <h2>2. 编辑个人信息</h2>
+
+    <h3>基本信息</h3>
+    <div class="grid-2">
+      <label>姓名 <input id="f_name" type="text"></label>
+      <label>头衔 <input id="f_title" type="text" placeholder="软件工程 · 本科生"></label>
+    </div>
+    <label>一句话介绍 <input id="f_tagline" type="text"></label>
+    <label>个人简介 <textarea id="f_bio" rows="4"></textarea></label>
+    <div class="grid-3">
+      <label>头像地址 <input id="f_avatar" type="text" placeholder="assets/avatar.svg 或 https://..."></label>
+      <label>所在地 <input id="f_location" type="text"></label>
+      <label>邮箱 <input id="f_email" type="email"></label>
+    </div>
+    <label>技能（用逗号分隔） <input id="f_skills" type="text" placeholder="Java, Android, SQLite"></label>
+
+    <h3>社交链接 <button class="mini" id="addSocial" type="button">+ 添加</button></h3>
+    <div id="socialsList" class="rows"></div>
+
+    <h3>项目 <button class="mini" id="addProject" type="button">+ 添加</button></h3>
+    <div id="projectsList" class="rows"></div>
+
+    <h3>经历 <button class="mini" id="addExp" type="button">+ 添加</button></h3>
+    <div id="experienceList" class="rows"></div>
+  </section>
+
+</main>
+
+<div class="savebar hidden" id="savebar">
+  <span class="savehint" id="saveHint">修改后点右侧保存</span>
+  <button id="exportBtn" class="btn ghost" type="button">导出 JSON</button>
+  <button id="reloadBtn" class="btn ghost" type="button">重新加载</button>
+  <button id="saveBtn" class="btn primary" type="button">保存到 GitHub</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="admin.js"></script>
+</body>
+</html>
